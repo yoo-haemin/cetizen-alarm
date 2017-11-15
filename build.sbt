@@ -12,14 +12,16 @@ lazy val root = (project in file(".")).
     libraryDependencies ++= {
       val http4sVersion = "0.17.5"
 
-      val scalaDep = (
-        "com.lihaoyi"           %% "scalatags"           % "0.6.7"         ::
-        "org.http4s"            %% "http4s-dsl"          % http4sVersion   ::
-        "org.http4s"            %% "http4s-blaze-server" % http4sVersion   ::
-        "org.http4s"            %% "http4s-blaze-client" % http4sVersion   ::
-        "com.lihaoyi"           %% "fastparse"           % "1.0.0"         ::
-        "net.ruippeixotog"      %% "scala-scraper"       % "2.0.0"         ::
-        "com.github.pureconfig" %% "pureconfig"          % "0.8.0"         :: Nil) //map (_.withDottyCompat())
+      val scalaDep =
+        "ch.qos.logback"             %  "logback-classic"     % "1.2.3"         ::
+        "com.typesafe.scala-logging" %% "scala-logging"       % "3.7.2"         ::
+        "com.lihaoyi"                %% "scalatags"           % "0.6.7"         ::
+        "org.http4s"                 %% "http4s-dsl"          % http4sVersion   ::
+        "org.http4s"                 %% "http4s-blaze-server" % http4sVersion   ::
+        "org.http4s"                 %% "http4s-blaze-client" % http4sVersion   ::
+        "com.lihaoyi"                %% "fastparse"           % "1.0.0"         ::
+        "net.ruippeixotog"           %% "scala-scraper"       % "2.0.0"         ::
+        "com.github.pureconfig"      %% "pureconfig"          % "0.8.0"         :: Nil //map (_.withDottyCompat())
 
       val javaDep = 
         "com.novocode"          %  "junit-interface"     % "0.11" % "test" :: Nil
